@@ -1,7 +1,9 @@
 <launch>
     <node name="stage" pkg="stage_ros" type="stageros" args="$(find stage_ros)/world/willow-erratic.world " />
     
-    <node name="scan_notifier" pkg="lab1" type="scan_notifier.py" output="screen"/>
+    
+    <param name="warning_distance" type="int" value="50" />
+    <node name="obstacle_warning" pkg="lab1" type="obstacle_warning.py"/>
     
     <node name="move_forward" pkg="lab1" type="move_forward.py" />
     
