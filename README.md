@@ -5,8 +5,8 @@ This repository contains the labs directions and solution for **CSC-356:** *Adva
 ### Labs Directory
 
 | Lab Directions | Lab Solution | Summary | Language |
-| :--- | :---: | :---: | :---: |
-| [Directions] (http://moodle.cornellcollege.edu/mod/page/view.php?id=52542) | [lab1](https://github.com/Oldkin/ROS/tree/master/src/lab1) | Simple robot simulation that moves a robot forward and stops  when it detects an obstacle within a certain parameter| Python |
+| :---: | :---: | :---: | :---: |
+| [Problem] (http://moodle.cornellcollege.edu/mod/page/view.php?id=52542) | [lab1](https://github.com/Oldkin/ROS/tree/master/src/lab1) | Simple robot simulation that moves a robot forward and stops  when it detects an obstacle within a certain parameter| Python |
 
 ### Contributors
 + Cameron Seebach
