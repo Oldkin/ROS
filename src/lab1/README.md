@@ -4,7 +4,6 @@ Lab 1
 This code is a simple robot simulation that moves a robot forward until an
 obstacle is detected. The obstacle is detected by a simulated laser scan, which
 goes from 135 degrees left of robot forward center to 135 degrees right of robot
-forward center. The stopping distance is given as the parameter
 'warning_distance' inside `lab1_stop_at_obstacle.launch`.
 
 The code is organized as two ROS nodes, one which detects obstacles using the
