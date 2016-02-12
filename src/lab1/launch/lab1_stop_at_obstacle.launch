@@ -1,10 +1,10 @@
 <launch>
     <node name="stage" pkg="stage_ros" type="stageros" args="$(find stage_ros)/world/willow-erratic.world " />
-    
-    
-    <param name="warning_distance" type="int" value="50" />
+
+
+    <param name="warning_distance" type="int" value="25" />
     <node name="obstacle_warning" pkg="lab1" type="obstacle_warning.py"/>
-    
+
     <node name="move_forward" pkg="lab1" type="move_forward.py" />
-    
+
 </launch>
