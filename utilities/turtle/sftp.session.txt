@@ -1,0 +1,3 @@
+cd mysite/static/robot
+put ips.json
+exit

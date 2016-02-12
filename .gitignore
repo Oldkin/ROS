@@ -5,5 +5,4 @@ devel/
 .catkin_workspace
 utilities/*/*_ip.sh
 utilities/*/*.json
-utilities/*/*.session.txt
 utilities/venv/
