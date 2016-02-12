@@ -41,8 +41,13 @@ def send_to_server(ip_filename, config_filename):
         for line in batch_file:
             child.expect("sftp> ")
             child.sendline(line)
+            
+def write_to_bash_file(ips, filename):
+    with open(filename, "w") as bash_file:
+        bash_file.write("export ROS_HOSTNAME={}\n".format(ips[0]))
 
 if __name__ == "__main__":
     ips = find_public_ips()
     write_ips_to_file(ips, "ips.json")
     send_to_server("ips.json", "server.cfg.json")
+    write_to_bash_file(ips, "turtle_ip.sh")

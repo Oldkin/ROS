@@ -3,6 +3,7 @@ python/
 build/
 devel/
 .catkin_workspace
-utilities/*.json
-utilities/*.session.txt
+utilities/*/*_ip.sh
+utilities/*/*.json
+utilities/*/*.session.txt
 utilities/venv/
