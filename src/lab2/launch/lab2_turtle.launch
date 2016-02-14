@@ -1,0 +1,16 @@
+<launch>
+  <!-- minimal stuff to bring up the turtlebot -->
+  <include file="$(find turtlebot_bringup)/launch/minimal.launch"></include>
+  <include file="$(find turtlebot_bringup)/launch/3dsensor.launch">
+    <!-- turn off the camera processing we won't use -->
+    <arg name="rgb_processing" value="false"/>
+    <arg name="ir_processing" value="false"/>
+    <arg name="depth_processing" value="false"/>
+    <arg name="depth_registered_processing" value="false"/>
+    <arg name="disparity_processing" value="false"/>
+    <arg name="disparity_registered_processing" value="false"/>
+
+    <!-- but do keep on the scan processing -->
+    <arg name="scan_processing" value="true"/>
+  </include>
+</launch>

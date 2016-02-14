@@ -1,0 +1,7 @@
+<launch>
+    <param name="warning_distance" type="int" value="70" />
+    <node name="obstacle_warning" pkg="lab2" type="obstacle_warning.py"/>
+
+    <!-- <node name="move_forward" pkg="lab1" type="move_forward.py" /> -->
+
+</launch>
