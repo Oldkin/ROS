@@ -21,7 +21,7 @@ def find_public_ips():
 def write_to_bash_file(master_ips, my_ips, filename):
     with open(filename, "w") as bash_file:
         bash_file.write("export ROS_HOSTNAME={}\n".format(my_ips[0]))
-        bash_file.write("export ROS_MASTER_URI={}\n".format(master_ips[0]))
+        bash_file.write("export ROS_MASTER_URI=http://{}:11311/\n".format(master_ips[0]))
 
 if __name__ == "__main__":
     r = requests.get("http://thewrong.info/static/robot/ips.json")
