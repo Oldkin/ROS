@@ -1,7 +1,21 @@
 <launch>
-    <param name="warning_distance" type="int" value="70" />
-    <node name="obstacle_warning" pkg="lab2" type="obstacle_warning.py"/>
 
-    <!-- <node name="move_forward" pkg="lab1" type="move_forward.py" /> -->
+    <!-- define a box reaching out in front of the robot (length) with a certain
+    width which will be scanned for obstacles. The box is centered width-wise on
+    the robot's width -->
+    <param name="warning_distance_length_cm" type="int" value="70"/>
+    <param name="warning_distance_width_cm" type="int" value="40"/>
+
+    <!-- run the obstacle warning code -->
+    <node name="obstacle_warning" pkg="lab2" type="obstacle_warning.py">
+      <!-- make sure the laser scan goes to the right place -->
+      <remap from="base_scan" to="scan"/>
+    </node>
+
+    <!-- run the code that moves forward until an obstacle is signaled -->
+    <node name="move_forward" pkg="lab2" type="move_forward.py" >
+      <!-- a simple way to send movement commands to the robot -->
+      <remap from="cmd_vel" to="cmd_vel_mux/input/teleop"/>
+    </node>
 
 </launch>
