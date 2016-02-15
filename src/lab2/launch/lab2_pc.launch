@@ -3,8 +3,8 @@
     <!-- define a box reaching out in front of the robot (length) with a certain
     width which will be scanned for obstacles. The box is centered width-wise on
     the robot's width -->
-    <param name="warning_distance_length_cm" type="int" value="70"/>
-    <param name="warning_distance_width_cm" type="int" value="40"/>
+    <param name="warning_distance_length_cm" type="int" value="85"/>
+    <param name="warning_distance_width_cm" type="int" value="36"/>
 
     <!-- run the obstacle warning code -->
     <node name="obstacle_warning" pkg="lab2" type="obstacle_warning.py">
@@ -14,8 +14,14 @@
 
     <!-- run the code that moves forward until an obstacle is signaled -->
     <node name="move_forward" pkg="lab2" type="move_forward.py" >
-      <!-- a simple way to send movement commands to the robot -->
-      <remap from="cmd_vel" to="cmd_vel_mux/input/teleop"/>
+      <remap from="cmd_vel" to="raw_vel"/>
+    </node>
+
+    <!-- higher values mean the robot speeds up and slows down faster -->
+    <param name="velocity_ramp_percent" type="double" value="20"/>
+    <!-- run the code that smoothly ramps between velocities -->
+    <node name="velocity_ramp" pkg="lab2" type="velocity_ramp.py">
+      <remap from="ramped_vel" to="cmd_vel_mux/input/teleop"/>
     </node>
 
 </launch>

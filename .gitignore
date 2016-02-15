@@ -2,6 +2,7 @@
 python/
 build/
 devel/
+maps/
 .catkin_workspace
 utilities/*/*_ip.sh
 utilities/*/*.json
